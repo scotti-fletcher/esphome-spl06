@@ -23,19 +23,7 @@ This component was built because the SPL06 chip has no native ESPHome support, a
 
 ## Installation
 
-### Option 1: From GitHub (recommended)
-
-Add this to your ESPHome YAML:
-
-```yaml
-external_components:
-  - source: github://scotti-fletcher/esphome-spl06
-    components: [spl06]
-```
-
-### Option 2: Local
-
-Copy the `spl06/` folder into your ESPHome `components/` directory:
+Copy the `components/spl06/` folder into your ESPHome config directory:
 
 ```
 config/esphome/
@@ -48,7 +36,7 @@ config/esphome/
   your-device.yaml
 ```
 
-Then reference it in your YAML:
+Then add this to your ESPHome YAML:
 
 ```yaml
 external_components:
@@ -118,8 +106,9 @@ ota:
   platform: esphome
 
 external_components:
-  - source: github://scotti-fletcher/esphome-spl06
-    components: [spl06]
+  - source:
+      type: local
+      path: components
 
 i2c:
   sda: D2
